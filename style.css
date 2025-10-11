@@ -426,19 +426,27 @@ nav {
     background: #f8f9fb;
     color: #333;
     border-top: 1px solid #e3e6ea;
-    padding: 60px 20px 0 20px;
+    padding-top: 60px;
     width: 100%;
     font-family: 'Poppins', sans-serif;
     margin-top: 60px;
 }
 
 .footer-row {
-    max-width: 1280px;
-    margin: 0 auto;
+    margin: 0 40px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 3rem;
+}
+
+.footer-col-head{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 80px;
+}
+
+.newsletter{
+    width: 420px;
 }
 
 .footer-col h4 {
@@ -531,37 +539,151 @@ nav {
 
 .footer-bottom{
     text-align: center;
-    padding: 32px 0;
+    padding: 24px 0;
+    margin-top: 24px;
+    background-color: #f6f4f4;
+    border-top: 2px solid #eae8e8;
 }
 
-
 @media (max-width: 768px) {
-    .footer {
-        position: relative;
-        bottom: 0;
-        left: 0;
-        transform: none;
-        width: 100%;
-        border-radius: 0;
+    .nav-item {
+        flex-direction: column;
+        background: #f1f1f1;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 220px;
+        display: none;
+        padding: 15px 0;
+        box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.15);
     }
 
-    .footer .footer-row {
-        padding: 20px;
-        gap: 1rem;
+    .nav-item.show {
+        display: flex;
     }
 
-    .footer-col form {
+    .menu-toggle {
         display: block;
     }
 
-    .footer-col form :where(input, button) {
+    .nav-profile-head h1 {
+        font-size: 24px;
+    }
+
+    .nav-item li a {
+        padding: 8px 32px;
+        font-size: 20px;
+    }
+
+    .banner-container {
+        flex-direction: column;
+        gap: 36px;
+        margin: 36px 0;
+
+    }
+
+    .section-title {
+        margin-bottom: 28px;
+    }
+
+    .about-section {
+        padding-top: 14px;
+        background-color: #fafafa;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .about-text {
+        padding: 0 28px;
+    }
+
+    .skills-section {
+        padding-top: 40px;
+        background-color: #fff;
+    }
+
+    .skills-container {
+        padding: 0 28px;
+    }
+
+    .skill-card {
+        padding: 28px 20px;
+    }
+
+    .projects-section {
+        padding: 40px 8px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .project-card h3 {
+        font-size: 20px;
+    }
+
+    .project-card p {
+        font-size: 15px;
+    }
+
+    .contact-section {
+        padding: 0 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .footer {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px;
+    }
+
+    .footer-col-head {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        justify-content: center;
         width: 100%;
     }
 
-    .footer-col form button {
-        margin: 10px 0 0 0;
+    .newsletter {
+        width: 100%;
+        max-width: 520px;
+        margin-top: 40px;
+        text-align: center;
     }
+
+    .footer-col form {
+        justify-content: center;
+    }
+
+    .footer-col .icons {
+        justify-content: center;
+    }
+
 }
+
 
 
 @media (max-width: 640px) {
@@ -671,7 +793,7 @@ nav {
         }
         
     .contact-section{
-        padding: 0px;
+        padding: 0px 24px;
     }
     .contact-info {
             font-size: 16px;
@@ -692,130 +814,71 @@ nav {
             font-size: 15px;
             padding: 10px;
         }
+    .footer{
+        padding-top: 28px;
+        padding-left: 0;
+        padding-right: 0;
+    }
 
-        .footer {
-            padding: 40px 15px;
+        .footer-row {
+            margin: 0 16px;
         }
 
-        .footer-col input {
+        .footer-col-head {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px 16px;
+            width: 100%;
+        }
+
+        .footer-col {
+            min-width: 140px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .footer-col .links li {
+            text-align: center;
+        }
+
+        .newsletter {
+            width: 100%;
+            max-width: 100%;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .newsletter p {
+            max-width: 90%;
+            margin: 10px auto 20px;
+            font-size: 0.95rem;
+        }
+
+        .newsletter form {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .newsletter input {
+            width: 90%;
+        }
+
+        .newsletter form button {
+            width: 90%;
+        }
+
+        .footer-col .icons {
+            justify-content: center;
+        }
+
+        .footer-bottom p {
             font-size: 0.9rem;
         }
     
 }
 
-@media (max-width: 768px) {
-    .nav-item {
-        flex-direction: column;
-        background: #f1f1f1;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 220px;
-        display: none;
-        padding: 15px 0;
-        box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.15);
-    }
-
-    .nav-item.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-profile-head h1 {
-        font-size: 24px;
-    }
-
-    .nav-item li a {
-        padding: 8px 32px;
-        font-size: 20px;
-    }
-
-    .banner-container {
-        flex-direction: column;
-        gap: 36px;
-        margin: 36px 0;
-
-    }
-    
-    .section-title {
-            margin-bottom: 28px;
-        }
-    
-    .about-section {
-            padding-top: 14px;
-            background-color: #fafafa;
-        }
-    
-    .about-container {
-            flex-direction: column;
-            align-items: center;
-            gap: 28px;
-        }
-
-    .about-text {
-            padding: 0 28px;
-        }
-    
-    .skills-section {
-            padding-top: 40px;
-            background-color: #fff;
-        }
-    
-    .skills-container {
-            padding: 0 28px;
-        }
-    
-    .skill-card {
-            padding: 28px 20px;
-        }
-    .projects-section {
-        padding: 40px 8px;
-    }
-
-    .projects-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding: 0 20px;
-    }
-
-    .project-card h3 {
-        font-size: 20px;
-    }
-
-    .project-card p {
-        font-size: 15px;
-    }
-
-    .contact-section {
-        padding: 0 20px;
-    }
-
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 28px;
-    }
-
-    .contact-info,
-    .contact-form {
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .footer-row {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-col form {
-        justify-content: center;
-    }
-
-    .footer-col .icons {
-        justify-content: center;
-    }
-    
-}
